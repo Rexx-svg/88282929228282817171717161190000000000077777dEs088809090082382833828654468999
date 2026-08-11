@@ -1,4 +1,4 @@
--- [[ L3VEL REDEEMER - BLUE THEME & LARGER UI (SAFE REMOVAL FIX) ]] --
+-- [[ L3VEL REDEEMER - BLUE THEME & LARGER UI ]] --
 -- // [1] SERVICES //
 local cloneref = cloneref or function(o) return o end
 local Players = cloneref(game:GetService("Players"))
@@ -69,6 +69,9 @@ local RedeemRemote = nil
 local Packages = ReplicatedStorage:WaitForChild("Packages", 5)
 local Net = Packages and Packages:WaitForChild("Net", 5)
 
+local getconns = getconnections or (debug and debug.getconnections)
+local firesignal = firesignal or (Services and Services.firesignal)
+
 local REDEEM_GUID = "7d14a912-1040-4867-b005-98838eb9acc4"
 
 -- // [4] UTILITY FUNCTIONS //
@@ -84,14 +87,23 @@ end
 
 local function getGameCodesUI()
     local gui = PlayerGui:FindFirstChild("Codes") or PlayerGui:FindFirstChild("CodesGui", true)
-    if not gui then return nil end
+    if not gui then return nil, nil end
     
+    local box = nil
+    local submitBtn = nil
+
     for _, obj in ipairs(gui:GetDescendants()) do
         if obj:IsA("TextBox") then
-            return obj
+            box = obj
+        elseif obj:IsA("TextButton") or obj:IsA("ImageButton") then
+            local name = obj.Name:lower()
+            if name:find("submit") or name:find("redeem") or name:find("button") or name:find("enter") then
+                submitBtn = obj
+            end
         end
     end
-    return nil
+
+    return box, submitBtn
 end
 
 local function resolveRedeemRemote()
@@ -105,25 +117,43 @@ local function resolveRedeemRemote()
     return RedeemRemote
 end
 
--- Canjeo 100% seguro por servidor (sin simular clicks ni firesignal trampa)
+-- Canjeo funcional sin VirtualInputManager (Previene el kick)
 local function aceRedeem(code)
     code = normalizeCode(code)
     if code == "" then return end
 
-    -- Mostrar visualmente en la caja del juego por comodidad
-    local box = getGameCodesUI()
+    local box, submitBtn = getGameCodesUI()
+
     if box then
         pcall(function()
             box.Text = code
         end)
     end
 
-    -- Invocación limpia directamente al servidor
+    -- 1. Intentar enviar directamente por el remoto del juego
     task.spawn(function()
-        task.wait(math.random(10, 25) / 100) -- Delay humano imperceptible
         local rf = resolveRedeemRemote()
         if rf then
             pcall(function() rf:InvokeServer(code) end)
+        end
+    end)
+
+    -- 2. Activar la UI del juego sin usar VirtualInputManager
+    task.spawn(function()
+        if submitBtn then
+            if firesignal then
+                pcall(function() firesignal(submitBtn.MouseButton1Click) end)
+                pcall(function() firesignal(submitBtn.Activated) end)
+            elseif getconns then
+                local ok, conns = pcall(getconns, submitBtn.MouseButton1Click)
+                if ok and type(conns) == "table" then
+                    for _, c in ipairs(conns) do
+                        pcall(function() if c.Enabled ~= false then c:Fire() end end)
+                    end
+                end
+            end
+        elseif box and firesignal then
+            pcall(function() firesignal(box.FocusLost, true) end)
         end
     end)
 
@@ -225,25 +255,53 @@ local function updateLockButton()
     LockButton.Text = _isLocked and "🔒" or "🔓"
 end
 
--- Búsqueda segura del remoto de notificaciones (Sin activar honeypots)
-local function resolveNotifyRemote()
-    if not Net then return nil end
-    local ok, api = pcall(require, Net)
-    if ok and type(api) == "table" then
-        -- Buscar específicamente el remoto seguro de notificaciones
-        for _, obj in ipairs(Net:GetChildren()) do
-            if obj:IsA("RemoteEvent") and (obj.Name:lower():find("notify") or obj.Name:lower():find("announc")) then
-                return obj
+-- Detección segura de Remotos de Anuncios
+local function getRemotesFromFn(fn)
+    if not debug or not debug.getupvalues or type(fn) ~= "function" then return {} end
+    local ok, vals = pcall(debug.getupvalues, fn)
+    local out = {}
+    if ok and type(vals) == "table" then
+        for _, v in pairs(vals) do
+            if typeof(v) == "Instance" and (v:IsA("RemoteEvent") or v:IsA("RemoteFunction") or v:IsA("UnreliableRemoteEvent")) then
+                table.insert(out, v)
             end
         end
     end
-    -- Fallback silencioso en ReplicatedStorage
-    return ReplicatedStorage:FindFirstChild("NotificationRemote", true) or ReplicatedStorage:FindFirstChild("AnnouncementRemote", true)
+    return out
+end
+
+local function resolveNotifyRemote()
+    local controllers = ReplicatedStorage:FindFirstChild("Controllers")
+    if controllers then
+        local notifCtrl = controllers:FindFirstChild("NotificationController", true)
+        if notifCtrl then
+            local ok, ctrl = pcall(require, notifCtrl)
+            if ok and type(ctrl) == "table" and type(ctrl.Start) == "function" then
+                local remotes = getRemotesFromFn(ctrl.Start)
+                if remotes[1] then return remotes[1] end
+            end
+        end
+    end
+
+    -- Si falla lo anterior, buscar remotos directamente en Net
+    if Net then
+        for _, child in ipairs(Net:GetChildren()) do
+            if child:IsA("RemoteEvent") then
+                return child
+            end
+        end
+    end
+    return nil
 end
 
 -- // [5] GUI CREATION //
 local function createGUI()
-    for _, name in ipairs({ CONFIG.Names.ScreenGui }) do
+    for _, name in ipairs({
+        CONFIG.Names.ScreenGui,
+        "L3velRedeemerGui",
+        "SourcesHubRedeemerGui",
+        "MahevyHubSniperUI",
+    }) do
         pcall(function()
             local g = CoreGui:FindFirstChild(name) or PlayerGui:FindFirstChild(name)
             if g then g:Destroy() end
@@ -488,13 +546,19 @@ local function setupEvents()
         updateLockButton()
     end)
 
-    -- Conexión segura de Notificaciones
     local notifyRemote = resolveNotifyRemote()
     if notifyRemote then
+        if getgenv then
+            local prev = getgenv().L3velRedeemerNotifyConn
+            if prev then pcall(function() prev:Disconnect() end) end
+        end
         listenConn = notifyRemote.OnClientEvent:Connect(function(...)
             if not _enabled or not isAnnouncement(...) then return end
             pcall(onAnnouncement, ...)
         end)
+        if getgenv then
+            getgenv().L3velRedeemerNotifyConn = listenConn
+        end
     end
 end
 
