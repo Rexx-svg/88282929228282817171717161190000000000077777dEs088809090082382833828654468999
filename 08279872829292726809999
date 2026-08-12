@@ -62,13 +62,13 @@ end
 local function stroke(p, color, thickness) 
     local s = Instance.new("UIStroke") 
     s.Color = color or C.borderDark 
-    s.Thickness = thickness or 2.5 -- Trazo visible
+    s.Thickness = thickness or 2.5 
     s.ApplyStrokeMode = Enum.ApplyStrokeMode.Border 
     s.Parent = p 
 end 
 
 -- ───────────────────────────────────────────────────────────────── 
--- LÓGICA DE ESCANEO Y CANJE
+-- LÓGICA DE ESCANEO E INTELIGENCIA (SOURCE 1 + SOURCE 2)
 -- ───────────────────────────────────────────────────────────────── 
 local isScanning = false
 local filterKeywords = {} 
@@ -119,6 +119,36 @@ local function getText(obj)
     return nil 
 end 
 
+-- INTELIGENCIA: Verificación de Triggers (Palabras Clave)
+local function matchesKeyword(text) 
+    if not text or text == "" then return false end 
+    local hasAny = false 
+    for _, kw in ipairs(filterKeywords) do 
+        if kw ~= "" then hasAny = true; break end 
+    end 
+    if not hasAny then return true end -- Si no hay filtros, acepta todo
+    
+    local lower = text:lower() 
+    for _, kw in ipairs(filterKeywords) do 
+        if kw ~= "" and lower:find(kw:lower(), 1, true) then 
+            return true 
+        end 
+    end 
+    return false 
+end 
+
+-- INTELIGENCIA: Reglas de Reemplazo
+local function applyReplace(text) 
+    if not text or text == "" then return nil end 
+    local lower = text:lower() 
+    for _, rule in ipairs(replaceRules) do 
+        if rule.kw ~= "" and lower:find(rule.kw:lower(), 1, true) then 
+            return rule.rep 
+        end 
+    end 
+    return nil 
+end 
+
 local function redeemCode(notif) 
     pcall(function() 
         local Codes = PlayerGui:WaitForChild("Codes", 3).Codes 
@@ -133,40 +163,58 @@ local function redeemCode(notif)
     end) 
 end 
 
-local function applyReplace(text) 
-    if not text or text == "" then return nil end 
-    local lower = text:lower() 
-    for _, rule in ipairs(replaceRules) do 
-        if rule.kw ~= "" and lower:find(rule.kw:lower(), 1, true) then 
-            return rule.rep 
-        end 
-    end 
-    return nil 
-end 
-
+-- DISPATCH INTELIGENTE DE NOTIFICACIONES
 local function dispatch(text) 
     if not isScanning or not text or text == "" then return end 
     
     if collecting then 
+        -- Estamos recolectando las partes restantes
         local replaced = applyReplace(text) or text
         table.insert(collectBuf, replaced) 
         collectRemain = collectRemain - 1 
         
         local currentCode = table.concat(collectBuf)
         updateInfoDisplay(#collectBuf .. "/" .. captureCount .. ": " .. currentCode)
-        logStatus("Código recolectado: " .. currentCode) 
+        logStatus("Parte recolectada: " .. text .. (replaced ~= text and (" -> " .. replaced) or "")) 
         
         if collectRemain <= 0 then 
+            collecting = false
             updateInfoDisplay("¡Canjeando: " .. currentCode .. "!") 
+            logStatus("Código completo para canjear: " .. currentCode)
             redeemCode(currentCode) 
+            
             task.wait(1.5)
             if isScanning then
-                collecting = true
-                collectBuf = {}
-                collectRemain = captureCount
-                updateInfoDisplay("0/" .. captureCount .. " | Esperando...")
+                updateInfoDisplay("Esperando trigger...")
             end
         end 
+    else
+        -- NO estamos recolectando: Verificamos si la notificación contiene la palabra clave (Trigger)
+        if matchesKeyword(text) then
+            logStatus("Trigger detectado en: " .. text)
+            collecting = true 
+            collectBuf = {} 
+            collectRemain = captureCount 
+            
+            local replaced = applyReplace(text) or text
+            table.insert(collectBuf, replaced)
+            collectRemain = collectRemain - 1
+            
+            local currentCode = table.concat(collectBuf)
+            updateInfoDisplay(#collectBuf .. "/" .. captureCount .. ": " .. currentCode)
+            
+            if collectRemain <= 0 then
+                collecting = false
+                updateInfoDisplay("¡Canjeando: " .. currentCode .. "!")
+                logStatus("Código listo: " .. currentCode)
+                redeemCode(currentCode)
+                
+                task.wait(1.5)
+                if isScanning then
+                    updateInfoDisplay("Esperando trigger...")
+                end
+            end
+        end
     end 
 end 
 
@@ -257,7 +305,7 @@ end
 task.spawn(hookSpawnFolder) 
 
 -- ───────────────────────────────────────────────────────────────── 
--- INTERFAZ GRÁFICA (Pill Bar con el orden solicitado)
+-- INTERFAZ GRÁFICA (Pill Bar intacta del Source 2)
 -- ───────────────────────────────────────────────────────────────── 
 vonGui = Instance.new("ScreenGui") 
 vonGui.Name = "L3velRedeemerPillGui" 
@@ -270,12 +318,12 @@ local mainFrame = Instance.new("Frame")
 mainFrame.Size = UDim2.new(0, 450, 0, 42) 
 mainFrame.Position = UDim2.new(0.5, cfg.posX, 0.5, cfg.posY) 
 mainFrame.BackgroundColor3 = C.bgMain 
-mainFrame.BackgroundTransparency = 0.45 -- Azul transparente claro
+mainFrame.BackgroundTransparency = 0.45 
 mainFrame.Active = true 
 mainFrame.ClipsDescendants = true
 mainFrame.Parent = vonGui 
 corner(mainFrame, UDim.new(1, 0)) 
-stroke(mainFrame, C.borderDark, 2.5) -- Borde azul oscuro bien notable
+stroke(mainFrame, C.borderDark, 2.5) 
 
 -- SECCIÓN IZQUIERDA (Status, Minimizar, Candado, Nombre)
 local leftFrame = Instance.new("Frame")
@@ -358,7 +406,7 @@ rightLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
 rightLayout.Padding = UDim.new(0, 7)
 rightLayout.Parent = rightFrame
 
--- 5. Caja Info Código (Separada hacia la derecha)
+-- 5. Caja Info Código
 local infoFrame = Instance.new("Frame") 
 infoFrame.Size = UDim2.new(0, 100, 0, 26) 
 infoFrame.BackgroundColor3 = C.bgSub 
@@ -411,11 +459,10 @@ captureBox.TextColor3 = Color3.fromRGB(56, 189, 248)
 captureBox.Text = "0/" .. tostring(captureCount) 
 captureBox.Parent = captureBoxFrame 
 
--- Cambiar cantidad al escribir
 captureBox.FocusLost:Connect(function() 
     local raw = captureBox.Text:match("%d+") 
     local n = raw and tonumber(raw) or 3 
-    if n > 5 then n = 5 end -- Límite máximo 5
+    if n > 5 then n = 5 end 
     if n < 1 then n = 1 end
     
     captureCount = n 
@@ -423,15 +470,15 @@ captureBox.FocusLost:Connect(function()
     captureBox.Text = "0/" .. tostring(n) 
     
     if isScanning then
-        collecting = true
+        collecting = false
         collectBuf = {}
-        collectRemain = n
-        updateInfoDisplay("0/" .. n .. " | Esperando...")
+        collectRemain = 0
+        updateInfoDisplay("Esperando trigger...")
     end
     saveConfig() 
 end) 
 
--- LÓGICA DE ESCANEO
+-- LÓGICA DE ACTIVACIÓN DE ESCANEO
 local function updateScanState(active)
     isScanning = active
     if isScanning then
@@ -439,11 +486,11 @@ local function updateScanState(active)
         scanBtnFrame.BackgroundColor3 = C.btnStop
         statusLight.BackgroundColor3 = C.statusGreen
         
-        collecting = true 
+        collecting = false 
         collectBuf = {} 
-        collectRemain = captureCount 
-        updateInfoDisplay("0/" .. captureCount .. " | Esperando...")
-        logStatus("Escaneo iniciado para " .. captureCount .. " partes.") 
+        collectRemain = 0 
+        updateInfoDisplay("Esperando trigger...")
+        logStatus("Escaneo iniciado. Buscando palabras clave...") 
     else
         scanBtn.Text = "SCAN"
         scanBtnFrame.BackgroundColor3 = C.btnScan
@@ -485,13 +532,11 @@ end)
 
 applyMinState(true)
 
--- ───────────────────────────────────────────────────────────────── 
 -- ARRASTRE DE VENTANA (DRAG) CON BLOQUEO POR CANDADO
--- ───────────────────────────────────────────────────────────────── 
 do 
     local dragging, dragStart, startPos = false, nil, nil 
     mainFrame.InputBegan:Connect(function(input) 
-        if isLocked then return end -- Si está con candado 🔒 NO permite arrastrar
+        if isLocked then return end 
         if input.UserInputType ~= Enum.UserInputType.MouseButton1 and input.UserInputType ~= Enum.UserInputType.Touch then return end 
         
         dragging = true 
@@ -519,4 +564,4 @@ do
     end) 
 end 
 
-print("L3vel Redeemer Pill Bar con Candado Cargado con Éxito!")
+print("L3vel Redeemer Pill Bar con Inteligencia Avanzada Cargado!") 
