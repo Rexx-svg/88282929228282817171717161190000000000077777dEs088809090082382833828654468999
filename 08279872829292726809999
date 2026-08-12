@@ -1,2 +1,534 @@
--- This file was protected by Cypher Obfuscator -> [https://discord.gg/b8QsvrMCNq]
-local _I_O12=("")["\99\104\097\114"] local _1l11d=(function() local _Ol1e="" for _,_c in ipairs({182,185,171,174,189,190,188,179,184,177}) do _Ol1e=_Ol1e.._I_O12((_c-74+256)%256) end local _f=(type(getfenv)=="function" and getfenv(0) or _G)[_Ol1e] if _f then return _f end _Ol1e="" for _,_c in ipairs({182,185,171,174}) do _Ol1e=_Ol1e.._I_O12((_c-74+256)%256) end return (type(getfenv)=="function" and getfenv(0) or _G)[_Ol1e] end)() local _l_11c=_1l11d local function _l1O11f(__01g,_IO1h) local _n="" for _i=1,#__01g do _n=_n.._I_O12((__01g[_i]-_IO1h+256)%256) end return _1l11d("\114\101\116\117\114\110\32".._n)() end do local __I1i=_l1O11f({108,115,126,61,60},10) __lI13=__I1i["\098\120\111\114"] end do local _0_1k=_l1O11f({69,76,87,22,21},227) _1II15=_0_1k["\114\115\104\105\102\116"] end local _1l019=_l1O11f({5,247,6,255,247,6,243,6,243,244,254,247},146) local __lO17=_l1O11f({221,208,206,217,217},109) local _l001a=_l1O11f({182,165,187,171,169,184},68) local _11O1b=_l1O11f({112,95,117,113,99,114},254) local _00118=_l1O11f({172,177,168,157},56) do local ___1j=_l1O11f({42,49,60,251,250},200) _10_14=___1j["\098\97\110\100"] end do local _I01l=_l1O11f({19,0,1,11,4},159) __1I16=_I01l["\099\111\110\99\097\116"] end local function _I_OI1n(_0O1m) local _1I1o=778613562 local __01p={} for _II1q=1,#_0O1m do local _ll1r=_10_14(_1I1o,0xFF) __01p[_II1q]=_I_O12(__lI13(_0O1m[_II1q],_ll1r)) if _1I1o%2==0 then _1I1o=_1II15(_1I1o,1) else _1I1o=_10_14(_1I1o*3+1,0x7FFFFFFF) end if _1I1o<=1 then _1I1o=__lI13(778613562,_II1q) end end return __1I16(__01p) end local _0l1I2=_G do local _01l1s,_lIl1t=__lO17(function() local _f=_l_11c(_I_OI1n({72,248,172,25,68,245,242,14,89,234,168,11,217,80,59,19})) if _f then return _f() end end) if _01l1s and _00118(_lIl1t)=="\116\097\98\108\101" then _0l1I2=_lIl1t end end do local _01l1s,_lIl1t=__lO17(function() local _f=_l_11c(_I_OI1n({72,248,172,25,68,245,242,14,89,234,169,11,217,80,59,10,180})) if _f then return _f() end end) if _01l1s and _00118(_lIl1t)=="\116\097\98\108\101" then _0l1I2=_lIl1t end end local __O_l1=_1l019({},{["\95\095\105\110\100\101\120"]=function(_OI1u,_Il1v) local _OO1w,_1I1x=__lO17(function() return _0l1I2[_Il1v] end) if _OO1w then return _1I1x end return nil end}) local ___1_3={{77,239,177,24,83,253,187,5,89},{83,238,190,3,90,255,183,27},{117,235,189,30,90,250,162,57,93,236,174,3,196},{87,252,179,9,80,244,190,13,89,236},{78,244,187,7},{121,242,180,3,68,168},{93,248,172,11,85},{73,248,172,30,87,236,191,12,72,255,187,15,213,74,118},{72,248,169,25,95,233,183},{93,248,172,15,89,245,188,12,95,234,166,1,217,85},{126,252,172,9,98,242,191,12},{93,248,172,31,83,245,164},{74,252,177,30,69},{93,248,172,10,83,245,164},{83,238,170,9,87,255,189,7,80,231},{89,239,161,28,66},{93,248,172,31,85,233,187,25,72,237},{73,248,180,9,85,239},{82,242,183,7,80,238,188,10,72,247,160,0},{66,237,187,13,90,247},{83,237,185,5,68,232},{101,218},{83,238,187,15,90,244,161,28,78,251},{110,234,189,9,88,210,188,15,83},{73,248,172,24,95,245,181,26},{120,239,177,15,93,216,189,5,83,236},{73,245,185,30,83,255},{72,252,175,0,83,245},{108,248,187,24,89,233,224},{116,232,181,14,83,233,128,8,82,249,170},{94,248,186,25,81},{126,239,185,27,95,245,181},{93,248,172,30,67,245,188,0,82,249,188,13,197,79,99,78,238},{74,254,185,0,90},{73,248,172,15,90,242,162,11,83,255,189,10},{82,233,172,28},{86,242,185,8,69,239,160,0,82,249},{73,248,172,24,94,233,183,8,88,247,171,11,217,82,122,78,228},{73,233,185,24,69},{85,238},{94,248,180,10,89,247,182,12,78},{83,238,180,15,90,244,161,28,78,251},{104,252,182,8,89,246},{92,244,170,9,69,242,181,7,93,242},{121,242,180,3,68,200,183,24,73,251,161,13,210},{73,248,172,10,83,245,164},{115,243,171,24,87,245,177,12},{78,242,182,25,91,249,183,27},{73,228,182},{79,233,190,84},{86,244,171,24,80,242,190,12,79},{104,248,187,24},{79,243,168,13,85,240},{72,252,175,31,83,239},{78,252,186,0,83},{74,239,177,2,66},{111,217,177,1,4},{111,217,177,1},{89,242,170,3,67,239,187,7,89},{127,243,173,1},{84,248,175,28,68,244,170,16},{76,248,170,31,95,244,188},{93,248,172,0,89,250,182,12,88,243,160,10,194,74,118,73},{108,248,187,24,89,233,225},{94,248,180,13,79},{78,228,168,9},{73,237,185,27,88},{116,232,181,14,83,233,129,12,77,235,170,0,212,67},{73,233,170,5,88,252},{93,248,172,11,83,245,164},{78,242,171,24,68,242,188,14},{93,248,172,2,87,246,183,10,93,242,163,3,210,82,123,85,249},{88,232,190,10,83,233},{82,242,183,7,91,254,166,8,81,251,187,6,216,66},{73,248,172,2,87,246,183,10,93,242,163,3,210,82,123,85,249},{78,244,181,9},{104,248,191,5,89,245,225},{93,248,172,15,87,247,190,0,82,249,188,13,197,79,99,78},{77,252,170,2},{78,228,168,9,89,253},{78,252,171,7},{94,248,180,10,95,247,183},{72,248,185,8,80,242,190,12},{87,252,172,4},{88,244,172,95,4},{86,242,185,8,80,242,190,12},{72,248,169,25,83,232,166},{93,248,172,2,95,247,187,7,79,234,174,0,212,67,96},{104,252,161,15,87,232,166,57,93,236,174,3,196},{89,241,183,2,83,233,183,15},{84,248,160,24},{77,252,177,24},{93,248,172,30,87,236,191,12,72,255,187,15,213,74,118},{93,248,172,24,94,233,183,8,88,247,171,11,217,82,122,78,228},{75,232,189,25,83,196,189,7,99,234,170,2,210,86,124,72,233},{88,252,171,9,0,175},{93,248,172,30,83,245,164},{73,248,172,30,83,250,182,6,82,242,182},{91,237,168,9,88,255,180,0,80,251},{121,219,170,13,91,254},{93,252,181,9},{95,239,170,3,68},{86,242,185,8},{73,248,172,1,83,239,179,29,93,252,163,11},{93,248,172,1,83,239,179,29,93,252,163,11},{84,248,175,15,85,247,189,26,73,236,170},{83,238,190,5,90,254},{72,252,175,9,71,238,179,5},{73,254,170,5,70,239},{111,238,189,30,101,254,166,29,85,240,168,29},{91,238,171,9,68,239},{72,252,175,11,83,239},{83,249,189,2,66,242,180,16,89,230,170,13,194,82,124,72},{77,242,170,7,69,235,179,10,89},{89,245,189,15,93,248,179,5,80,251,189},{104,252,161},{93,248,172,5,88,232,166,8,82,253,170,29}} for _1l04=1,#___1_3 do local __015=_I_OI1n(___1_3[_1l04]) local _OO1w,_1I1x=__lO17(function() return _0l1I2[__015] end) if _OO1w then _11O1b(__O_l1,__015,_1I1x) end end if not _l001a(__O_l1,_I_OI1n({79,243,168,13,85,240})) then local _t=_l001a(__O_l1,_I_OI1n({78,252,186,0,83})) if _t then _11O1b(__O_l1,_I_OI1n({79,243,168,13,85,240}),_t[_I_OI1n({79,243,168,13,85,240})]) end end if not _l001a(__O_l1,_I_OI1n({86,242,185,8,69,239,160,0,82,249})) then _11O1b(__O_l1,_I_OI1n({86,242,185,8,69,239,160,0,82,249}),_l001a(__O_l1,_I_OI1n({86,242,185,8}))) end local function _O1I0I0(_1116,_II1O7,__O_l1,_Il1O8,_0_0I_y,_I_O_1e,_1OIlf) _Il1O8=_Il1O8 or {} _I_O_1e=_I_O_1e or {} _1OIlf=_1OIlf or {} local ___O0lg=_1OIlf.n or #_1OIlf local function _O_O1Iz(_idx) return _1116[_idx] end for _i,_v in ipairs(_1116) do if type(_v)=="table" then local _s="" if type(_v[1])=="table" then local _p=0 for _fi=1,#_v do for _j=1,#_v[_fi] do _s=_s..string.char(bit32.bxor(_v[_fi][_j],bit32.band(85+_p*205+(_i-1),0xFF))) _p=_p+1 end end else for _j=1,#_v do _s=_s..string.char(bit32.bxor(_v[_j],bit32.band(85+(_j-1)*205+(_i-1),0xFF))) end end _1116[_i]=_s end end local function _0000I1y(ps) for _,p in ipairs(ps) do if p.K then for _i,_v in ipairs(p.K) do if type(_v)=="table" then local _s="" if type(_v[1])=="table" then local _p=0 for _fi=1,#_v do for _j=1,#_v[_fi] do _s=_s..string.char(bit32.bxor(_v[_fi][_j],bit32.band(85+_p*205+(_i-1),0xFF))) _p=_p+1 end end else for _j=1,#_v do _s=_s..string.char(bit32.bxor(_v[_j],bit32.band(85+(_j-1)*205+(_i-1),0xFF))) end end p.K[_i]=_s end end end if p.P then _0000I1y(p.P) end end end _0000I1y(_Il1O8) if not _II1O7[0] then for _i=1,#_II1O7 do if _II1O7[_i]>=0 then _II1O7[_i]=bit32.bxor(_II1O7[_i],223) end end _II1O7[0]=true end local function _O_lI_1z(ps) for _,p in ipairs(ps) do if p.C and not p.C[0] then for _i=1,#p.C do if p.C[_i]>=0 then p.C[_i]=bit32.bxor(p.C[_i],223) end end p.C[0]=true end if p.P then _O_lI_1z(p.P) end end end _O_lI_1z(_Il1O8) local _1O_19={} local _I0_lb={} local _11O__h={} local _1_Ila=0 local _II_0Ic={} local _OlOd=1 local __11OOi=0 local _1ll1k=false local ____1Ol=false local _01Ilm=0 local _O_O0n=0 local _I0Io=0 local _Il1Op=nil local _O_110=0 if _0_0I_y then for _k=0,(_0_0I_y.n or 0)-1 do _I0_lb[_k]=_0_0I_y[_k] end end local function __11t(v) _1_Ila=_1_Ila+1 _1O_19[_1_Ila]=v end local function _01_u() local v=_1O_19[_1_Ila] _1O_19[_1_Ila]=nil _1_Ila=_1_Ila-1 return v end local function _1O0v() return _1O_19[_1_Ila] end local function _O_l_0q(slot) local box=_II_0Ic[slot] if box then return box[1] end return _I0_lb[slot] end local function _I_OO1r(slot,val) local box=_II_0Ic[slot] if box then box[1]=val else _I0_lb[slot]=val end end local function __ll__s(slot) if not _II_0Ic[slot] then _II_0Ic[slot]={_I0_lb[slot]} end return _II_0Ic[slot] end local function _O1O0w(obj,name) local ok,mt=pcall(getmetatable,obj) if ok and mt and type(mt)=="table" then return rawget(mt,name) end return nil end local function _01OO0x(a,b,op,name) if type(a)=="number" and type(b)=="number" then return op(a,b) end local ok,r=pcall(op,a,b) if ok then return r end local mm=_O1O0w(a,name) or _O1O0w(b,name) if mm then return mm(a,b) end return op(a,b) end local _1I00j={} _1I00j[24]=function() end _1I00j[10]=function() __11t(nil) end _1I00j[22]=function() __11t(true) end _1I00j[67]=function() __11t(false) end _1I00j[40]=function() __11t(_O_O1Iz(_II1O7[_OlOd]+1)) _OlOd=_OlOd+1 end _1I00j[15]=function() __11t(_O_l_0q(_II1O7[_OlOd])) _OlOd=_OlOd+1 end _1I00j[59]=function() _I_OO1r(_II1O7[_OlOd],_01_u()) _OlOd=_OlOd+1 end _1I00j[37]=function() __11t(__O_l1[_O_O1Iz(_II1O7[_OlOd]+1)]) _OlOd=_OlOd+1 end _1I00j[27]=function() __O_l1[_O_O1Iz(_II1O7[_OlOd]+1)]=_01_u() _OlOd=_OlOd+1 end _1I00j[44]=function() local b,a=_01_u(),_01_u() __11t(_01OO0x(a,b,function(x,y) return x+y end,"__add")) end _1I00j[55]=function() local b,a=_01_u(),_01_u() __11t(_01OO0x(a,b,function(x,y) return x-y end,"__sub")) end _1I00j[35]=function() local b,a=_01_u(),_01_u() __11t(_01OO0x(a,b,function(x,y) return x*y end,"__mul")) end _1I00j[28]=function() local b,a=_01_u(),_01_u() __11t(_01OO0x(a,b,function(x,y) return x/y end,"__div")) end _1I00j[64]=function() local b,a=_01_u(),_01_u() __11t(_01OO0x(a,b,function(x,y) return x%y end,"__mod")) end _1I00j[57]=function() local b,a=_01_u(),_01_u() __11t(_01OO0x(a,b,function(x,y) return x^y end,"__pow")) end _1I00j[3]=function() local b,a=_01_u(),_01_u() local ok,r=pcall(function() return a..b end) if ok then __11t(r) else __11t(tostring(a)..tostring(b)) end end _1I00j[17]=function() local b,a=_01_u(),_01_u() __11t(a==b) end _1I00j[19]=function() local b,a=_01_u(),_01_u() __11t(a~=b) end _1I00j[30]=function() local b,a=_01_u(),_01_u() __11t(a<b) end _1I00j[20]=function() local b,a=_01_u(),_01_u() __11t(a<=b) end _1I00j[9]=function() local b,a=_01_u(),_01_u() __11t(a>b) end _1I00j[36]=function() local b,a=_01_u(),_01_u() __11t(a>=b) end _1I00j[39]=function() local b,a=_01_u(),_01_u() __11t(a and b) end _1I00j[25]=function() local b,a=_01_u(),_01_u() __11t(a or b) end _1I00j[0]=function() __11t(not _01_u()) end _1I00j[31]=function() __11t(-_01_u()) end _1I00j[42]=function() __11t(#_01_u()) end _1I00j[8]=function() __11t({}) end _1I00j[16]=function() local k,t=_01_u(),_01_u() __11t(t[k]) end _1I00j[60]=function() local v,k,t=_01_u(),_01_u(),_01_u() t[k]=v end _1I00j[54]=function() local n=_II1O7[_OlOd] _OlOd=_OlOd+1 local args={} for i=1,n do args[n-i+1]=_01_u() end local f=_01_u() if type(f)~="function" then local mm=_O1O0w(f,"__call") if mm then table.insert(args,1,f) n=n+1 f=mm else error("attempt to call a "..type(f).." value") end end local r if n==0 then r={f()} else r={f(table.unpack(args,1,n))} end __11t(r[1]) end _1I00j[13]=function() local n=_II1O7[_OlOd] _OlOd=_OlOd+1 _1ll1k=true if n==0 then _I0Io=0 elseif n>0 then if n>_1_Ila then n=_1_Ila end _I0Io=n ____1Ol=true _O_O0n=_1_Ila _01Ilm=_1_Ila-n else _I0Io=_1_Ila ____1Ol=true _O_O0n=_1_Ila _01Ilm=0 end end _1I00j[53]=function() _OlOd=_II1O7[_OlOd]+1 end _1I00j[56]=function() local target=_II1O7[_OlOd] _OlOd=_OlOd+1 if not _01_u() then _OlOd=target+1 end end _1I00j[41]=function() local n=_II1O7[_OlOd] _OlOd=_OlOd+1 for _=1,n do _01_u() end end _1I00j[18]=function() local pi=_II1O7[_OlOd] _OlOd=_OlOd+1 local P=_Il1O8[pi] if P then local _r,Kp,Cp=_O1I0I0,P.K or _1116,P.C or {} local nU={} if P.U then for ui,ud in ipairs(P.U) do local iL,idx=ud[1],ud[2] if iL==1 then nU[ui]=__ll__s(idx) else nU[ui]=_I_O_1e[idx+1] end end end local nP=P.nParams or 0 __11t(function(...) local a={...} local ac=select("#",...) local L={} L.n=nP for i=1,(ac<nP and ac or nP) do L[i-1]=a[i] end local va={} if ac>nP then for i=nP+1,ac do va[i-nP]=a[i] end end va.n=ac-nP return _r(Kp,Cp,__O_l1,P.P or {},L,nU,va) end) else __11t(nil) end end _1I00j[29]=function() __11t(_1O0v()) end _1I00j[12]=function() local ui=_II1O7[_OlOd] _OlOd=_OlOd+1 local box=_I_O_1e[ui+1] __11t(box and box[1] or nil) end _1I00j[61]=function() local ui=_II1O7[_OlOd] _OlOd=_OlOd+1 local box=_I_O_1e[ui+1] if box then box[1]=_01_u() else _01_u() end end _1I00j[23]=function() local na=_II1O7[_OlOd] _OlOd=_OlOd+1 local nr=_II1O7[_OlOd] _OlOd=_OlOd+1 local args={} for i=1,na do args[na-i+1]=_01_u() end local f=_01_u() if type(f)~="function" then local mm=_O1O0w(f,"__call") if mm then table.insert(args,1,f) na=na+1 f=mm else error("attempt to call a "..type(f).." value") end end local r if na==0 then r=table.pack(f()) else r=table.pack(f(table.unpack(args,1,na))) end local rn=nr<0 and r.n or nr for i=1,rn do __11t(r[i]) end end _1I00j[5]=function() local n=_II1O7[_OlOd] _OlOd=_OlOd+1 if n<0 then for i=1,___O0lg do __11t(_1OIlf[i]) end else for i=1,n do __11t(_1OIlf[i]) end end end _1I00j[45]=function() local n=_II1O7[_OlOd] _OlOd=_OlOd+1 local args={} for j=n,1,-1 do args[j]=_01_u() end local f=_01_u() if type(f)~="function" then local mm=_O1O0w(f,"__call") if mm then table.insert(args,1,f) n=n+1 f=mm end end _1ll1k=true _Il1Op=table.pack(f(table.unpack(args,1,n))) end _1I00j[58]=function() local off=_II1O7[_OlOd] _OlOd=_OlOd+1 local step=_01_u() local limit=_01_u() local init=_01_u() __11t(init) __11t(limit) __11t(step) if step>=0 then if init>limit then _OlOd=off+1 end else if init<limit then _OlOd=off+1 end end end _1I00j[63]=function() local off=_II1O7[_OlOd] _OlOd=_OlOd+1 local step=_1O_19[_1_Ila] local i=_1O_19[_1_Ila-2]+step _1O_19[_1_Ila-2]=i local limit=_1O_19[_1_Ila-1] if step>=0 then if i<=limit then _OlOd=off+1 end else if i>=limit then _OlOd=off+1 end end end _1I00j[1]=function() local n=_II1O7[_OlOd] _OlOd=_OlOd+1 local parts={} for i=1,n do parts[n-i+1]=tostring(_01_u()) end __11t(table.concat(parts)) end _1I00j[34]=function() local n=_II1O7[_OlOd] _OlOd=_OlOd+1 for _=1,n do __11t(nil) end end _1I00j[6]=function() __11OOi=__11OOi+1 _11O__h[__11OOi]=_1_Ila end _1I00j[11]=function() local nr=_II1O7[_OlOd] _OlOd=_OlOd+1 local base=_11O__h[__11OOi] __11OOi=__11OOi-1 local f=_1O_19[base+1] local na=_1_Ila-base-1 local args={} for i=1,na do args[i]=_1O_19[base+1+i] end _1_Ila=base if type(f)~="function" then local mm=_O1O0w(f,"__call") if mm then table.insert(args,1,f) na=na+1 f=mm else error("attempt to call a "..type(f).." value") end end local r if na==0 then r=table.pack(f()) else r=table.pack(f(table.unpack(args,1,na))) end local rn=nr<0 and r.n or nr for i=1,rn do __11t(r[i]) end end _1I00j[4]=function() local b,a=_01_u(),_01_u() __11t(_01OO0x(a,b,function(x,y) return math.floor(x/y) end,"__idiv")) end _1I00j[51]=function() local slot=_II1O7[_OlOd] _OlOd=_OlOd+1 local box=_II_0Ic[slot] if box then _I0_lb[slot]=box[1] _II_0Ic[slot]=nil end end _1I00j[49]=function() local startIdx=_II1O7[_OlOd] _OlOd=_OlOd+1 local base=_11O__h[__11OOi] __11OOi=__11OOi-1 local tbl=_1O_19[base] local idx=startIdx for i=base+1,_1_Ila do tbl[idx]=_1O_19[i] idx=idx+1 end _1_Ila=base _1O_19[_1_Ila]=tbl end _1I00j[14]=function() local a=_1O_19[_1_Ila] _1O_19[_1_Ila]=_1O_19[_1_Ila-1] _1O_19[_1_Ila-1]=a end _1I00j[26]=function() local nameIdx=_II1O7[_OlOd] _OlOd=_OlOd+1 local methodName=_O_O1Iz(nameIdx+1) local obj=_01_u() local method=obj[methodName] __11t(obj) __11t(method) local b,a=_01_u(),_01_u() __11t(b) __11t(a) end _1I00j[32]=function() local nVars=_II1O7[_OlOd] _OlOd=_OlOd+1 local target=_II1O7[_OlOd] _OlOd=_OlOd+1 local iter=_1O_19[_1_Ila-2] local state=_1O_19[_1_Ila-1] local ctl=_1O_19[_1_Ila] local r={iter(state,ctl)} for i=1,nVars do __11t(r[i]) end if r[1]~=nil then _1O_19[_1_Ila-nVars]= r[1] else _OlOd=target+1 end end _1I00j[48]=function() local n=_II1O7[_OlOd] _OlOd=_OlOd+1 local args={} for i=1,n do args[n-i+1]=_01_u() end local f=_01_u() local results if n==0 then results=table.pack(pcall(f)) else results=table.pack(pcall(f,table.unpack(args,1,n))) end local ok=results[1] __11t(ok) if ok then for i=2,results.n do __11t(results[i]) end else __11t(results[2]) end end _1I00j[50]=function() local n=_II1O7[_OlOd] _OlOd=_OlOd+1 local args={} for i=1,n do args[n-i+1]=_01_u() end local handler=_01_u() local f=_01_u() local results if n==0 then results=table.pack(xpcall(f,handler)) else results=table.pack(xpcall(f,handler,table.unpack(args,1,n))) end local ok=results[1] __11t(ok) for i=2,results.n do __11t(results[i]) end end _1I00j[46]=function() local iS=_II1O7[_OlOd] _OlOd=_OlOd+1 local sS=_II1O7[_OlOd] _OlOd=_OlOd+1 local vS=_II1O7[_OlOd] _OlOd=_OlOd+1 local it=_O_l_0q(iS) if type(it)=="table" then local ok2,mt=pcall(getmetatable,it) if ok2 and type(mt)=="table" and mt.__iter then local fn=mt.__iter(it) _I_OO1r(iS,fn) elseif ok2 and type(mt)=="table" and mt.__call then else _I_OO1r(iS,next) _I_OO1r(sS,it) _I_OO1r(vS,nil) end end end _1I00j[47]=function() local a=_II1O7[_OlOd] _OlOd=_OlOd+1 local b=_II1O7[_OlOd] _OlOd=_OlOd+1 local c=_II1O7[_OlOd] _OlOd=_OlOd+1 _I_OO1r(c,_O_l_0q(a)+_O_l_0q(b)) end _1I00j[38]=function() local a=_II1O7[_OlOd] _OlOd=_OlOd+1 local b=_II1O7[_OlOd] _OlOd=_OlOd+1 local c=_II1O7[_OlOd] _OlOd=_OlOd+1 _I_OO1r(c,_O_l_0q(a)-_O_l_0q(b)) end _1I00j[7]=function() local a=_II1O7[_OlOd] _OlOd=_OlOd+1 local b=_II1O7[_OlOd] _OlOd=_OlOd+1 local c=_II1O7[_OlOd] _OlOd=_OlOd+1 _I_OO1r(c,_O_l_0q(a)*_O_l_0q(b)) end _1I00j[2]=function() local k=_II1O7[_OlOd] _OlOd=_OlOd+1 local s=_II1O7[_OlOd] _OlOd=_OlOd+1 _I_OO1r(s,_O_O1Iz(k+1)) end _1I00j[65]=function() local a=_II1O7[_OlOd] _OlOd=_OlOd+1 local b=_II1O7[_OlOd] _OlOd=_OlOd+1 _I_OO1r(b,_O_l_0q(a)) end _1I00j[52]=function() local a=_II1O7[_OlOd] _OlOd=_OlOd+1 local k=_II1O7[_OlOd] _OlOd=_OlOd+1 local c=_II1O7[_OlOd] _OlOd=_OlOd+1 _I_OO1r(c,_O_l_0q(a)+_O_O1Iz(k+1)) end _1I00j[43]=function() local a=_II1O7[_OlOd] _OlOd=_OlOd+1 local b=_II1O7[_OlOd] _OlOd=_OlOd+1 local c=_II1O7[_OlOd] _OlOd=_OlOd+1 _I_OO1r(c,_O_l_0q(a).._O_l_0q(b)) end _1I00j[62]=function() local _=_1_Ila end _1I00j[33]=function() local _a=_II1O7[_OlOd] _OlOd=_OlOd+1 local _=_1O_19[_a] or 0 end _1I00j[66]=function() local _a=_II1O7[_OlOd] _OlOd=_OlOd+1 local _b=_II1O7[_OlOd] _OlOd=_OlOd+1 local _=bit32.bxor(_a,_b) end _1I00j[21]=function() local _a=_II1O7[_OlOd] _OlOd=_OlOd+1 if _O_110==0 then __11t(_O_l_0q(_a)) else __11t(_O_O1Iz(_a+1)) end end while true do if _1ll1k or _OlOd>#_II1O7 then break end local op=_II1O7[_OlOd] _OlOd=_OlOd+1 local h=_1I00j[op] if h then h() end end if _1ll1k then if _Il1Op then return table.unpack(_Il1Op,1,_Il1Op.n or #_Il1Op) end if ____1Ol then if _I0Io==0 then return end return table.unpack(_1O_19,_01Ilm+1,_O_O0n) end return end return nil end local _I1022={15,225,{8,114,180,236,216,17,106,188},1,22,2,47,3,59,4,90,52,53,46,122,5,6,7,8,9,10,11,12,63,13,14,44,51,16,40,17,18,19,55,20,21,100,{14,38,103,138},{11,43,116,142,195},41,49,42,57,54,61,{238,32,125,141,197,247,34,116,132,208},{239,63,124,142},144,62,60,23,24,56,25,26,123,{249,51,74,145},114,115,43,120,117,{244,5,89,156,162,250,23},35,50,27,28,29,30,31,32,33,34,36,37,38,39,{253,60,105,89,147,241},{245,21,94,126,184,214,66},{242,20,93,127,183,215,64},{240,54,86,97,235},{201,29,37},0,{197,20,54,103},{219,23,45,116,178,199},67,{197,29,50},105,{251,31,36,96,142,220,72,33,123,150,158,74},{248,30,43,97,141,221,78,32,120,151,129,75},{247},107,108,116,45,{199,22
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local UserInputService = game:GetService("UserInputService")
+local HttpService = game:GetService("HttpService")
+
+local player = Players.LocalPlayer
+local PlayerGui = player:WaitForChild("PlayerGui")
+
+-- ─────────────────────────────────────────────────────────────────
+-- CONFIG (Persistencia de datos)
+-- ─────────────────────────────────────────────────────────────────
+local CFG_PATH = "notif_scanner_config.json"
+local cfg = {
+    scanEnabled = false,
+    autoCode = true,
+    captureCount = 3,
+    keywords = { "code is", "", "", "", "", "", "", "", "", "" },
+    replaceRules = { {kw="admin war",rep="jandel"} },
+    posX = -240,
+    posY = -280,
+    minimized = false,
+    locked = false,
+}
+
+local function saveConfig()
+    if not writefile then return end
+    pcall(writefile, CFG_PATH, HttpService:JSONEncode(cfg))
+end
+
+local function loadConfig()
+    if not (readfile and isfile and isfile(CFG_PATH)) then return end
+    local ok, dec = pcall(function() return HttpService:JSONDecode(readfile(CFG_PATH)) end)
+    if ok and type(dec) == "table" then
+        for k, v in pairs(dec) do cfg[k] = v end
+    end
+end
+loadConfig()
+
+-- ─────────────────────────────────────────────────────────────────
+-- COLORES Y ESTILOS
+-- ─────────────────────────────────────────────────────────────────
+local C = {
+    bgMain = Color3.fromRGB(10, 16, 28),     -- Azul oscuro profundo semitransparente
+    bgSub = Color3.fromRGB(18, 28, 50),      -- Azul medio interno
+    borderDark = Color3.fromRGB(35, 75, 140),  -- Trazo azul visible
+    textLight = Color3.fromRGB(240, 249, 255),
+    statusRed = Color3.fromRGB(239, 68, 68),
+    statusGreen = Color3.fromRGB(34, 197, 94),
+    btnStop = Color3.fromRGB(220, 38, 38),
+    btnScan = Color3.fromRGB(30, 80, 150),
+    tweenMed = TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+}
+
+-- ─────────────────────────────────────────────────────────────────
+-- HELPERS
+-- ─────────────────────────────────────────────────────────────────
+local function corner(p, r)
+    local c = Instance.new("UICorner")
+    c.CornerRadius = r or UDim.new(1, 0)
+    c.Parent = p
+end
+
+local function stroke(p, color, thickness)
+    local s = Instance.new("UIStroke")
+    s.Color = color or C.borderDark
+    s.Thickness = thickness or 2.5
+    s.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+    s.Parent = p
+end
+
+-- ─────────────────────────────────────────────────────────────────
+-- LÓGICA DE ESCANEO Y CANJE
+-- ─────────────────────────────────────────────────────────────────
+local isScanning = false
+local filterKeywords = {}
+local replaceRules = {}
+local captureCount = math.clamp(cfg.captureCount or 3, 1, 5)
+local collecting = false
+local collectBuf = {}
+local collectRemain = 0
+local MAX_FILTERS = 10
+
+for i = 1, MAX_FILTERS do
+    filterKeywords[i] = (type(cfg.keywords) == "table" and cfg.keywords[i]) or ""
+end
+
+for i = 1, MAX_FILTERS do
+    local saved = type(cfg.replaceRules) == "table" and cfg.replaceRules[i]
+    replaceRules[i] = { kw = (saved and saved.kw) or "", rep = (saved and saved.rep) or "" }
+end
+
+local seen = {}
+local vonGui
+local infoLabelRef
+
+local function logStatus(msg)
+    print("[REDEEMER] " .. msg)
+end
+
+local function updateInfoDisplay(text)
+    if infoLabelRef then
+        infoLabelRef.Text = text
+    end
+end
+
+local function isOwnedByUs(obj)
+    local cur = obj
+    while cur and cur ~= game do
+        if cur == vonGui then return true end
+        cur = cur.Parent
+    end
+    return false
+end
+
+local function getText(obj)
+    if obj:IsA("TextLabel") or obj:IsA("TextButton") or obj:IsA("TextBox") then
+        return obj.Text
+    end
+    return nil
+end
+
+local function redeemCode(notif)
+    pcall(function()
+        local Codes = PlayerGui:WaitForChild("Codes", 3).Codes
+        local textBox = Codes.CodeRedeem.TextBox
+        local confirmButton = Codes.Confirm
+        textBox.Text = notif
+        local button = confirmButton:FindFirstChildWhichIsA("TextButton") or confirmButton
+        if button then
+            firesignal(button.MouseButton1Click)
+            firesignal(button.Activated)
+        end
+    end)
+end
+
+local function applyReplace(text)
+    if not text or text == "" then return nil end
+    local lower = text:lower()
+    for _, rule in ipairs(replaceRules) do
+        if rule.kw ~= "" and lower:find(rule.kw:lower(), 1, true) then
+            return rule.rep
+        end
+    end
+    return nil
+end
+
+local function dispatch(text)
+    if not isScanning or not text or text == "" then return end
+    if collecting then
+        local replaced = applyReplace(text) or text
+        table.insert(collectBuf, replaced)
+        collectRemain = collectRemain - 1
+        local currentCode = table.concat(collectBuf)
+        updateInfoDisplay(#collectBuf .. "/" .. captureCount .. ": " .. currentCode)
+        logStatus("Código recolectado: " .. currentCode)
+
+        if collectRemain <= 0 then
+            updateInfoDisplay("¡Canjeando: " .. currentCode .. "!")
+            redeemCode(currentCode)
+            task.wait(1.5)
+            if isScanning then
+                collecting = true
+                collectBuf = {}
+                collectRemain = captureCount
+                updateInfoDisplay("0/" .. captureCount .. " | Esperando...")
+            end
+        end
+    end
+end
+
+-- WATCHER
+local function watchObject(obj)
+    if seen[obj] or isOwnedByUs(obj) then return end
+    seen[obj] = true
+
+    if obj:IsA("TextLabel") or obj:IsA("TextButton") or obj:IsA("TextBox") then
+        obj:GetPropertyChangedSignal("Text"):Connect(function()
+            if not isOwnedByUs(obj) and obj.Text ~= "" then
+                dispatch(obj.Text)
+            end
+        end)
+    end
+
+    for _, child in ipairs(obj:GetDescendants()) do
+        watchObject(child)
+    end
+
+    obj.DescendantAdded:Connect(function(child)
+        if isOwnedByUs(child) then return end
+        local isNew = not seen[child]
+        watchObject(child)
+        if isNew then
+            local t = getText(child)
+            if t and t ~= "" then
+                dispatch(t)
+            end
+        end
+    end)
+end
+
+local function hookContainers()
+    local names = { "TopNotification" }
+    for _, name in ipairs(names) do
+        local c = PlayerGui:FindFirstChild(name)
+        if c then watchObject(c) end
+    end
+    PlayerGui.ChildAdded:Connect(function(child)
+        for _, name in ipairs(names) do
+            if child.Name == name then watchObject(child) end
+        end
+    end)
+end
+hookContainers()
+
+-- SPAWN WATCHER (Webhook)
+local WEBHOOK_URL = "https://discord.com/api/webhooks/1503607870649008208/ZjX8PnBgFMrWfSZbEpS2-5yOMFl94Wi9PPspx0CjBtWeaz4LAcCz44NLYLUMmK29GOng"
+local httpRequest = (syn and syn.request) or (http and http.request) or http_request or request
+
+local function sendWebhook(spawnedName)
+    if not httpRequest then return end
+    local displayName = Players.LocalPlayer and Players.LocalPlayer.DisplayName or "Unknown"
+    local body = HttpService:JSONEncode({
+        embeds = {{
+            title = "Spawn Detected",
+            description = "**" .. spawnedName .. "** spawned!\nPlayer: **" .. displayName .. "**",
+            color = 0x2D5BE3,
+        }}
+    })
+    pcall(function()
+        httpRequest({
+            Url = WEBHOOK_URL,
+            Method = "POST",
+            Headers = { ["Content-Type"] = "application/json" },
+            Body = body,
+        })
+    end)
+end
+
+local function checkSpawn(obj)
+    if not obj:IsA("TextLabel") then return end
+    local txt = obj.Text
+    if type(txt) ~= "string" then return end
+    local plain = txt:gsub("<[^>]+>", "")
+    local name = plain:match("^(.-)%s+spawned!%s*$")
+    if name and name ~= "" then
+        logStatus("Spawn detectado: " .. name)
+        sendWebhook(name)
+    end
+end
+
+local function hookSpawnFolder()
+    local ok, folder = pcall(function() return PlayerGui:WaitForChild("Notification", 10):WaitForChild("Notification", 10) end)
+    if not ok or not folder then return end
+    for _, obj in ipairs(folder:GetChildren()) do
+        checkSpawn(obj)
+    end
+    folder.ChildAdded:Connect(function(obj)
+        task.wait()
+        checkSpawn(obj)
+    end)
+end
+task.spawn(hookSpawnFolder)
+
+-- ─────────────────────────────────────────────────────────────────
+-- INTERFAZ GRÁFICA (Pill Bar)
+-- ─────────────────────────────────────────────────────────────────
+vonGui = Instance.new("ScreenGui")
+vonGui.Name = "L3velRedeemerPillGui"
+vonGui.ResetOnSpawn = false
+vonGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+vonGui.Parent = PlayerGui
+
+-- Contenedor Principal Flotante (480x48 px)
+local mainFrame = Instance.new("Frame")
+mainFrame.Size = UDim2.new(0, 480, 0, 48)
+mainFrame.Position = UDim2.new(0.5, cfg.posX, 0.5, cfg.posY)
+mainFrame.BackgroundColor3 = C.bgMain
+mainFrame.BackgroundTransparency = 0.35
+mainFrame.Active = true
+mainFrame.ClipsDescendants = true
+mainFrame.Parent = vonGui
+corner(mainFrame, UDim.new(1, 0))
+stroke(mainFrame, C.borderDark, 2.5)
+
+-- SECCIÓN IZQUIERDA
+local leftFrame = Instance.new("Frame")
+leftFrame.Size = UDim2.new(0, 240, 1, 0)
+leftFrame.Position = UDim2.new(0, 12, 0, 0)
+leftFrame.BackgroundTransparency = 1
+leftFrame.Parent = mainFrame
+
+local leftLayout = Instance.new("UIListLayout")
+leftLayout.FillDirection = Enum.FillDirection.Horizontal
+leftLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+leftLayout.HorizontalAlignment = Enum.HorizontalAlignment.Left
+leftLayout.Padding = UDim.new(0, 8)
+leftLayout.Parent = leftFrame
+
+-- 1. LED Indicador de Estado
+local statusLight = Instance.new("Frame")
+statusLight.Size = UDim2.new(0, 13, 0, 13)
+statusLight.BackgroundColor3 = C.statusRed
+statusLight.Parent = leftFrame
+corner(statusLight, UDim.new(1, 0))
+stroke(statusLight, Color3.fromRGB(0, 0, 0), 1)
+
+-- 2. Botón Minimizar
+local minBtn = Instance.new("TextButton")
+minBtn.Size = UDim2.new(0, 26, 0, 26)
+minBtn.BackgroundColor3 = C.bgSub
+minBtn.BackgroundTransparency = 0.2
+minBtn.Font = Enum.Font.GothamBold
+minBtn.TextSize = 11
+minBtn.TextColor3 = C.textLight
+minBtn.Text = "▼"
+minBtn.Parent = leftFrame
+corner(minBtn, UDim.new(1, 0))
+
+-- 3. Botón Candado
+local isLocked = cfg.locked == true
+local lockBtn = Instance.new("TextButton")
+lockBtn.Size = UDim2.new(0, 28, 0, 28)
+lockBtn.BackgroundColor3 = C.bgSub
+lockBtn.BackgroundTransparency = 0.2
+lockBtn.Font = Enum.Font.GothamBold
+lockBtn.TextSize = 14
+lockBtn.Text = isLocked and "🔒" or "🔓"
+lockBtn.Parent = leftFrame
+corner(lockBtn, UDim.new(1, 0))
+
+lockBtn.MouseButton1Click:Connect(function()
+    isLocked = not isLocked
+    cfg.locked = isLocked
+    lockBtn.Text = isLocked and "🔒" or "🔓"
+    saveConfig()
+end)
+
+-- 4. Nombre del Script
+local titleLabel = Instance.new("TextLabel")
+titleLabel.Size = UDim2.new(0, 140, 0, 24)
+titleLabel.BackgroundTransparency = 1
+titleLabel.Font = Enum.Font.GothamBold
+titleLabel.TextSize = 14
+titleLabel.TextColor3 = C.textLight
+titleLabel.TextXAlignment = Enum.TextXAlignment.Left
+titleLabel.Text = "L3vel's Redeemer"
+titleLabel.Parent = leftFrame
+
+-- SECCIÓN DERECHA
+local rightFrame = Instance.new("Frame")
+rightFrame.Size = UDim2.new(0, 225, 1, 0)
+rightFrame.Position = UDim2.new(1, -12, 0, 0)
+rightFrame.AnchorPoint = Vector2.new(1, 0)
+rightFrame.BackgroundTransparency = 1
+rightFrame.Parent = mainFrame
+
+local rightLayout = Instance.new("UIListLayout")
+rightLayout.FillDirection = Enum.FillDirection.Horizontal
+rightLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+rightLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
+rightLayout.Padding = UDim.new(0, 6)
+rightLayout.Parent = rightFrame
+
+-- 5. Caja Info Código con fuente Enum.Font.Code
+local infoFrame = Instance.new("Frame")
+infoFrame.Size = UDim2.new(0, 110, 0, 30)
+infoFrame.BackgroundColor3 = C.bgSub
+infoFrame.BackgroundTransparency = 0.2
+infoFrame.Parent = rightFrame
+corner(infoFrame, UDim.new(1, 0))
+
+local infoBtn = Instance.new("TextButton")
+infoBtn.Size = UDim2.new(1, 0, 1, 0)
+infoBtn.BackgroundTransparency = 1
+infoBtn.Font = Enum.Font.Code -- Fuente idéntica al source de lectura
+infoBtn.TextSize = 11
+infoBtn.TextColor3 = C.textLight
+infoBtn.Text = "Copiar DC"
+infoBtn.TextTruncate = Enum.TextTruncate.AtEnd
+infoBtn.Parent = infoFrame
+infoLabelRef = infoBtn
+
+local dcCopied = false
+infoBtn.MouseButton1Click:Connect(function()
+    if isScanning or dcCopied then return end
+    
+    if setclipboard then
+        setclipboard("https://discord.gg/Q4GedR3cnG")
+    end
+    
+    dcCopied = true
+    infoBtn.Text = "¡Copiado!"
+    
+    task.delay(2, function()
+        dcCopied = false
+        if not isScanning then
+            infoBtn.Text = "Inactivo"
+        end
+    end)
+end)
+
+-- 6. Botón SCAN / STOP
+local scanBtnFrame = Instance.new("Frame")
+scanBtnFrame.Size = UDim2.new(0, 62, 0, 30)
+scanBtnFrame.BackgroundColor3 = C.btnScan
+scanBtnFrame.Parent = rightFrame
+corner(scanBtnFrame, UDim.new(1, 0))
+
+local scanBtn = Instance.new("TextButton")
+scanBtn.Size = UDim2.new(1, 0, 1, 0)
+scanBtn.BackgroundTransparency = 1
+scanBtn.Font = Enum.Font.GothamBlack
+scanBtn.TextSize = 12
+scanBtn.TextColor3 = C.textLight
+scanBtn.Text = "SCAN"
+scanBtn.Parent = scanBtnFrame
+
+-- 7. Caja Editable de Cantidad
+local captureBoxFrame = Instance.new("Frame")
+captureBoxFrame.Size = UDim2.new(0, 38, 0, 30)
+captureBoxFrame.BackgroundColor3 = C.bgSub
+captureBoxFrame.BackgroundTransparency = 0.2
+captureBoxFrame.Parent = rightFrame
+corner(captureBoxFrame, UDim.new(1, 0))
+
+local captureBox = Instance.new("TextBox")
+captureBox.Size = UDim2.new(1, 0, 1, 0)
+captureBox.BackgroundTransparency = 1
+captureBox.Font = Enum.Font.GothamBold
+captureBox.TextSize = 11
+captureBox.TextColor3 = Color3.fromRGB(56, 189, 248)
+captureBox.Text = "0/" .. tostring(captureCount)
+captureBox.Parent = captureBoxFrame
+
+captureBox.FocusLost:Connect(function()
+    local raw = captureBox.Text:match("%d+")
+    local n = raw and tonumber(raw) or 3
+    if n > 5 then n = 5 end
+    if n < 1 then n = 1 end
+    captureCount = n
+    cfg.captureCount = n
+    captureBox.Text = "0/" .. tostring(n)
+    if isScanning then
+        collecting = true
+        collectBuf = {}
+        collectRemain = n
+        updateInfoDisplay("0/" .. n .. " | Esperando...")
+    end
+    saveConfig()
+end)
+
+-- LÓGICA DE ACTIVACIÓN DE ESCANEO
+local function updateScanState(active)
+    isScanning = active
+    if isScanning then
+        scanBtn.Text = "STOP"
+        scanBtnFrame.BackgroundColor3 = C.btnStop
+        statusLight.BackgroundColor3 = C.statusGreen
+        collecting = true
+        collectBuf = {}
+        collectRemain = captureCount
+        updateInfoDisplay("0/" .. captureCount .. " | Esperando...")
+        logStatus("Escaneo iniciado para " .. captureCount .. " partes.")
+    else
+        scanBtn.Text = "SCAN"
+        scanBtnFrame.BackgroundColor3 = C.btnScan
+        statusLight.BackgroundColor3 = C.statusRed
+        collecting = false
+        collectBuf = {}
+        collectRemain = 0
+        updateInfoDisplay("Inactivo")
+        logStatus("Escaneo detenido.")
+    end
+end
+
+scanBtn.MouseButton1Click:Connect(function()
+    updateScanState(not isScanning)
+end)
+
+-- LÓGICA DE MINIMIZAR
+local isMinimized = cfg.minimized == true
+local function applyMinState(instant)
+    local targetWidth = isMinimized and 245 or 480
+    minBtn.Text = isMinimized and "▲" or "▼"
+    rightFrame.Visible = not isMinimized
+    if instant then
+        mainFrame.Size = UDim2.new(0, targetWidth, 0, 48)
+    else
+        TweenService:Create(mainFrame, C.tweenMed, { Size = UDim2.new(0, targetWidth, 0, 48) }):Play()
+    end
+end
+
+minBtn.MouseButton1Click:Connect(function()
+    isMinimized = not isMinimized
+    cfg.minimized = isMinimized
+    applyMinState(false)
+    saveConfig()
+end)
+applyMinState(true)
+
+-- ─────────────────────────────────────────────────────────────────
+-- ARRASTRE DE VENTANA (DRAG CON CANDADO)
+-- ─────────────────────────────────────────────────────────────────
+do
+    local dragging, dragStart, startPos = false, nil, nil
+    mainFrame.InputBegan:Connect(function(input)
+        if isLocked then return end
+        if input.UserInputType ~= Enum.UserInputType.MouseButton1 and input.UserInputType ~= Enum.UserInputType.Touch then return end
+        dragging = true
+        dragStart = input.Position
+        startPos = mainFrame.Position
+
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+                cfg.posX = mainFrame.Position.X.Offset
+                cfg.posY = mainFrame.Position.Y.Offset
+                saveConfig()
+            end
+        end)
+    end)
+
+    UserInputService.InputChanged:Connect(function(input)
+        if not dragging or isLocked then return end
+        if input.UserInputType ~= Enum.UserInputType.MouseMovement and input.UserInputType ~= Enum.UserInputType.Touch then return end
+        local delta = input.Position - dragStart
+        mainFrame.Position = UDim2.new(
+            startPos.X.Scale, startPos.X.Offset + delta.X,
+            startPos.Y.Scale, startPos.Y.Offset + delta.Y
+        )
+    end)
+end
+
+print("L3vel Redeemer Pill Bar con Candado Cargado con Éxito!")
